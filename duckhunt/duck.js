@@ -58,7 +58,7 @@ Duck.prototype.deathSpin = function(){
             this.sounds.thud[0].play();
             delete $._spritely.instances[this.id];
             this.DOM.attr("class","deadDuck");
-            this.game.trigger('duck:down'); // HA GET IT, DUCK DOWN!?!
+            this.game.trigger('duck:down'); 
         },this));
 };
 
@@ -68,6 +68,7 @@ Duck.prototype.hatch = function(){
     this.DOM = $("#"+this.id);
     this.bindEvents();
 };
+
 
 Duck.prototype.fly = function(){
     var _this = this;
@@ -83,13 +84,14 @@ Duck.prototype.fly = function(){
 
     return this;
 };
-
+// duck missed
 Duck.prototype.escape = function(){
     this.unbindEvents();
     if(!this.DOM.hasClass("deadSpin")){
         this.game.trigger("duck:miss");
         this.game.animate({
-            backgroundColor: '#fbb4d4'
+            backgroundColor: '#ff6347' 
+            //  pink colour of background 
         },900);
         $._spritely.instances[this.id].stop_random=true;
         this.DOM.spState(2);
