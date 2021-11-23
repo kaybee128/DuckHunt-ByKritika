@@ -1,8 +1,3 @@
-/************************************************
- DUCK HUNT JS v2
- by Matt Surabian - MattSurabian.com
- MIT License
- **************************************************/
 
 var duckhunt = {
     playfield: '#game', // jquery selector, will change to jquery object on init
